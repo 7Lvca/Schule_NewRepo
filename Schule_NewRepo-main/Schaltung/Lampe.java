@@ -5,9 +5,8 @@ import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 
 public class Lampe extends Baustein {
-	Lampe(int x, int y, int h, int w) {
-		super(x, y, h, w);
-	}
+	Lampe() { super(30, 20, 30, 30);
+		}
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);

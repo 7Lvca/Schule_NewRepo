@@ -4,30 +4,27 @@ import javax.swing.JPanel;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import javax.swing.JMenu;
 
 public class Schaltung extends JPanel {
-	private void erstelleKabel() {
-		Kabel kabel = new Kabel(50, 50);
-		this.add(kabel);
-		this.repaint();
-	}
 	Schaltung() {
 		this.setBackground(Color.LIGHT_GRAY);
 		this.setLayout(null);
 
-		Lampe lampe = new Lampe(20, 20, 30, 30);
-		Schalter schalter = new Schalter(55, 55, 30, 30);
-		JButton button = new JButton("Neues Kabel");
-		button.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				erstelleKabel();
-			}
-		});
-		button.setBounds(100, 5, 130, 30) ;
+    	BausteinFactory bausteinFactory = new BausteinFactory();
+		Baustein lampe = bausteinFactory.erstellen("Lampe");
 
+		JMenuBar menuBar = new JMenuBar();
+		JMenu erstellenMenu = new JMenu("Erstellen");
+
+		JMenuItem addLampe = new JMenuItem("Lampe");
+		JMenuItem addSchalter = new JMenuItem("Schalter");
+		JMenuItem addKabel = new JMenuItem("Kabel");
+
+		erstellenMenu.add(addKabel);
+		menuBar.add(addKabel);
+
+		this.add(menuBar);
 		this.add(lampe);
-		this.add(schalter);
-		this.add(button);
 	}
 }

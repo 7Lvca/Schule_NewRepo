@@ -4,8 +4,8 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 public class Schalter extends Baustein {
-	Schalter(int x, int y, int h, int w) {
-        super(x, y, h, w);
+	Schalter() {
+        super(30, 20, 30, 30);
 	}
 
 	@Override

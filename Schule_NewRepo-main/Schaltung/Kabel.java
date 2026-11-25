@@ -7,8 +7,8 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
 public class Kabel extends Baustein {
-    Kabel(int x, int y) {
-        super(x,y, 5, 70);
+    Kabel() {
+        super(20,20, 5, 70);
     }
     private Baustein start;
     private Baustein end;
